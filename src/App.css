@@ -1,19 +1,10 @@
-.App {
+h1, p {
+  font-family: 'Inconsolata', monospace;
+}
+h1 {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
+#root {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -23,16 +14,81 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.row {
+  display: flex;
+  flex-direction: row-reverse;
+  text-align: center;
+  justify-content: left;
+  gap: 10px;
+}
+.description {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.temperature > p {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+}
+section {
+  padding: 40px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  border-radius: 10px;
+}
+.form {
+  display: flex;
+  justify-content: center;
+}
+input {
+  border: 2px solid #279baa;
+  border-radius: 0.2em;
+  font-family: inherit;
+  font-size: inherit;
+  color: white;
+  outline: none;
+  padding: 0.5rem;
+  background: none;
+}
+input:hover {
+  border-color: #adffff;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+input:focus {
+  border-color: #18ffff;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+}
+img {
+  filter: invert(93%) sepia(100%) saturate(0%) hue-rotate(319deg)
+    brightness(108%) contrast(109%);
+  height: 24px;
+  width: 24px;
+  text-align: center;
+}
+.description {
+  animation: transit 1s forwards;
+}
+.feels {
+  animation: transit 2s forwards;
+}
+.humidity {
+  animation: transit 3s forwards;
+}
+.wind {
+  animation: transit 4s forwards;
+}
+@keyframes transit {
+  0% {
+    opacity: 0;
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    opacity: 1;
   }
 }
